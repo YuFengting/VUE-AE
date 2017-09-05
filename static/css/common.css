@@ -1,0 +1,107 @@
+/***
+vue页面的css样式可以自动补全,写在公用样式中无法自动补全，需自己手动补全
+***/
+
+*{margin:0px;padding:0px;box-sizing:border-box;}
+ul,li{list-style:none;}
+a{text-decoration: none;color:#2c3e50;display: block;}
+
+.ellipsis1{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+.ellipsis2{overflow:hidden;  text-overflow:ellipsis;  display:-webkit-box;  -webkit-line-clamp:2;  -webkit-box-orient:vertical;  }
+
+/*二级页面内容*/
+.subMain{position: absolute;top:50px;left:0px;right:0px;bottom:0px;overflow: auto;}
+
+/*箭头样式*/
+.icon-arrow {width: 7px;height: 14px;position: absolute;top: 50%;margin-top: -7px;-webkit-transition: all .6s;transition: all .6s;}
+/*i.icon-arrow:before {border-color: transparent transparent transparent #F73856 !important;}*/
+.icon-arrow:before {content: "";width: 0; height: 0;border-style: solid;border-width: 7px;position: absolute;top: 0; -webkit-transition: all .6s;transition: all .6s;border-color: transparent transparent transparent #e4e5e5;left: 3px;}
+.icon-arrow:after {content: "";width: 0;height: 0;border-style: solid;border-width: 7px;position: absolute;top: 0;-webkit-transition: all .6s;transition: all .6s;border-color: transparent transparent transparent #fff;left: 0;}
+
+.disabled {
+  color:#ccc;
+}
+
+
+/*提示信息弹窗*/
+.showMsgTips{background:rgba(0,0,0,0.5);width: 40%;height:40px;line-height:40px;text-align:center;color:#fff;position: fixed;top: 0px;bottom:0px;left:0px;right:0px;margin:auto;font-size:14px;border-radius: 4px;z-index:999;}
+.showMsgTips2{display:none;background:rgba(0,0,0,0.5);width: 40%;height:40px;line-height:40px;text-align:center;color:#fff;position: fixed;top: 0px;bottom:0px;left:0px;right:0px;margin:auto;font-size:14px;border-radius: 4px;z-index:999;}
+
+/*渐隐效果*/
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0
+}
+
+/*消息提示框*/
+.common-toast {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 11000;
+  width: auto;
+  padding: 0 8px;
+  line-height: 34px;
+  border-radius: 5px;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
+.common-toast-show {
+  animation: commonToastShow ease 300ms;
+}
+
+.common-toast-hide {
+  animation: commonToastHide ease 500ms;
+}
+
+@keyframes commonToastShow {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+@keyframes commonToastHide {
+  0% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 0, 0) scale(0);
+  }
+}
+
+/*左滑删除按钮样式*/
+.deleteIcon{
+  width:75px;
+  text-align: center;
+  color:#fff;
+  background:#ffa614;
+  position: absolute;
+  top:0px;
+  right:-75px;
+  height: 100%;
+  display: flex;
+  display: -webkit-flex;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
+}
+
+/*课程列表*/
+.showTeamBuildLists{padding-left:10px;background: #fff;}
+.showTeamBuildLists .courseLists{border-bottom:1px solid #dddddd;padding: 10px; display:flex;  display:-webkit-flex;}
+.showTeamBuildLists .courseLists .courseImg{width:90px;height:70px;margin-right: 10px;display: block;pointer-events: none;}
+.showTeamBuildLists .courseLists .courseInfor{flex:1;-webkit-flex:1;pointer-events: none;}
+.showTeamBuildLists .courseLists .courseTitle{font-size:16px;line-height: 30px;}
+.showTeamBuildLists .courseLists .courseContent{font-size:14px;color:#949494;line-height:20px;}
